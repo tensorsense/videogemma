@@ -1,23 +1,21 @@
-torch
+torch==2.3.0a0
+torchvision==0.18.0a0
 transformers
 peft
 ipywidgets
-bitsandbytes==0.42.0
+bitsandbytes
 pillow
-sentencepiece==0.2.0
-protobuf==5.26.0
+sentencepiece
+protobuf
 python-dotenv
 
-# video processing
-torchvision
-pytorchvideo
+# pytorchvideo  # pip version is broken
+decord
 av
 imageio
-opencv-python
+opencv-python==4.8.0.74
 
-# languagebind
 einops
-
 deepspeed
 flash-attn
 tensorboardX
