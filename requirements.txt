@@ -1,5 +1,5 @@
-torch==2.3.0a0
-torchvision==0.18.0a0
+# torch==2.3.0a0
+# torchvision==0.18.0a0
 transformers
 peft
 ipywidgets
