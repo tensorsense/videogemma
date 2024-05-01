@@ -4,10 +4,10 @@ CKPT_NAME="llava_gemma_v1_finetune"
 model_path="/data/checkpoints/${CKPT_NAME}"
 cache_dir="./cache_dir"
 GPT_Zero_Shot_QA="/data/data"
-video_dir="${GPT_Zero_Shot_QA}/Activitynet_Zero_Shot_QA/all_test"
-gt_file_question="${GPT_Zero_Shot_QA}/Activitynet_Zero_Shot_QA/test_q.json"
-gt_file_answers="${GPT_Zero_Shot_QA}/Activitynet_Zero_Shot_QA/test_a.json"
-output_dir="${GPT_Zero_Shot_QA}/Activitynet_Zero_Shot_QA/${CKPT_NAME}"
+video_dir="${GPT_Zero_Shot_QA}/TGIF_Zero_Shot_QA/mp4"
+gt_file_question="${GPT_Zero_Shot_QA}/TGIF_Zero_Shot_QA/test_q.json"
+gt_file_answers="${GPT_Zero_Shot_QA}/TGIF_Zero_Shot_QA/test_a.json"
+output_dir="${GPT_Zero_Shot_QA}/TGIF_Zero_Shot_QA/${CKPT_NAME}"
 
 
 gpu_list="${CUDA_VISIBLE_DEVICES:-0}"
@@ -19,7 +19,7 @@ CHUNKS=${#GPULIST[@]}
 
 
 for IDX in $(seq 0 $((CHUNKS-1))); do
-  CUDA_VISIBLE_DEVICES=${GPULIST[$IDX]} python3 llava/eval/video/run_inference_video_qa_act.py \
+  CUDA_VISIBLE_DEVICES=${GPULIST[$IDX]} python3 llava/eval/video/run_inference_video_qa.py \
       --model_path ${model_path} \
       --cache_dir ${cache_dir} \
       --video_dir ${video_dir} \

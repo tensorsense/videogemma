@@ -13,7 +13,7 @@ output_dir="${GPT_Zero_Shot_QA}/MSRVTT_Zero_Shot_QA/${CKPT_NAME}"
 gpu_list="${CUDA_VISIBLE_DEVICES:-0}"
 IFS=',' read -ra GPULIST <<< "$gpu_list"
 
-export PYTHONPATH="/data/vlm_sandbox/custom_llava:$PYTHONPATH"
+export PYTHONPATH="llava:$PYTHONPATH"
 
 CHUNKS=${#GPULIST[@]}
 
